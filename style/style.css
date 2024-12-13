@@ -1,0 +1,224 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/*
+.= pasta atual
+..= pasta anterior
+Para arquivos dentro do documento  spc: url()
+*/
+@font-face {
+    font-family:'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+
+
+
+:root {
+    --cor0: #bfdecc;
+    --cor1: #3DDB84;
+    --cor2: #4FB196;
+    --cor3: #1c5e37;
+    --cor4: #3f604e;
+    --cor5: #05390e;
+
+    --font-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --font-destaque: 'Bebas Neue', cursive;
+    --font-android: 'Android', cursive;
+}
+
+/*
+* = configuração global(todos os elementos h1, h2, p, ent)
+*/
+* {
+    margin: 0px ;
+    padding: 0px;
+}
+
+
+
+body {
+    background-color: var(--cor0);
+    font-family: var(--font-padrao);
+    
+}
+
+/* min-height= aumentar altura */
+/* text-align: center = centralizar texto*/
+/*background-image: linear-gradient = degrade de cores*/
+header {
+    background-image: linear-gradient(to bottom, var(--cor1), var(--cor5));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+
+    
+}
+/* margin-bottom = espaço do padding  */
+/* font-size = tamamho da fonte*/
+/*text-shadow = colocar sombra no texto*/
+header > h1 {
+    color: white;
+    font-family: var(--font-destaque);
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.346);
+    font-weight: normal;
+}
+
+header > p {
+    font-family: var(--font-padrao); 
+    font-size: 20px;
+    color: white;
+    max-width: 500px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.346);
+    
+  
+}
+
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.342);
+}
+/* text-decoration: none = para o texto perder o sublinhado*/
+nav > a {
+    color: var(--cor1);
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    transition-duration: .5s;
+}
+/*nav > a:hover = ao passar o mouse muda de cor*/
+nav > a:hover{
+    background-color: var(--cor2);
+    color: var(--cor5);
+}
+/* margin:auto = para centralizar*/
+/* box-shadow = sombra no padding */
+/* margin-bottom = para ter margem no final da pagina */
+/* border-radius = borda esquerda e direita arredondada como no projeto */
+main {
+    min-height: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+main h1 {
+    color: var(--cor5);
+    font-family: var(--font-android);
+    font-size: 25px;
+}
+
+main h2 {
+    color: var(--cor4);
+    font-family: var(--font-android);
+    font-size: 20px;
+    background-image: linear-gradient(to right,var(--cor1), transparent);
+    text-indent: 5px;
+}
+/*text-align: justify; = dinâmica do parágrafo*/
+/*text-indent: = recuo de paragrafo em px*/
+/* line-height = altura entre linhas em 'em'*/
+
+/**/
+main p {
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 13px;
+    line-height: 25px;
+}
+main strong{
+    color: var(--cor5);
+    font-weight: bold;
+    background-color: var(--cor2);
+}
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor0);
+    border-radius: 2px;
+    padding: 2px;
+}
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor4);
+}
+
+/* para centralizar a imagem (display: block; + margin: auto;) porque uma imagem por padrão não é um bloco.
+width em max ###px */
+main img {
+    width: 100%;
+    
+}
+main img.pequena {
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+/*responsividade de video*/
+div.video {
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 57%;
+    position: relative;
+}
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+aside {
+    color: rgb(210, 210, 210);
+    background-color: rgb(48, 98, 68);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px black;
+}
+aside > h3 {
+    border-radius: 10px 10px 0px 0px;
+    color: var(--cor5);
+    text-indent: 5px;
+    margin: -10px;
+    padding: 5px;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    
+}
+/*list-style-type: '\2714\00A0'; NÃO É COMPATIVEL PARA TODOS NAVEGADORES*/
+aside > ul {
+    list-style-type: '\2714\00A0';
+    list-style-position: inside;
+    columns: 2;
+}
+article > p {
+    margin: 5px;
+}
+
+
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
